@@ -96,7 +96,8 @@ public class TextileBackup implements ModInitializer {
                         .requires((ctx) -> {
                                     try {
                                         return ((config.get().playerWhitelist.contains(ctx.getEntityOrThrow().getNameForScoreboard()) ||
-                                                ctx.getPermissions() == PermissionPredicate.ALL) && 
+                                                ctx.getPermissions().hasPermission(
+                                                    new Level(PermissionLevel.fromLevel(config.get().permissionLevel)))) &&
                                                 !config.get().playerBlacklist.contains(ctx.getEntityOrThrow().getNameForScoreboard())) ||
                                                 (ctx.getServer().isSingleplayer() &&
                                                         config.get().alwaysSingleplayerAllowed);
