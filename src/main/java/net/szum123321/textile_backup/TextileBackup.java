@@ -28,7 +28,6 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.server.command.ServerCommandSource;
-import net.minecraft.command.permission.PermissionPredicate;
 import net.minecraft.command.permission.Permission.Level;
 import net.minecraft.command.permission.PermissionLevel;
 import net.szum123321.textile_backup.commands.create.CleanupCommand;
