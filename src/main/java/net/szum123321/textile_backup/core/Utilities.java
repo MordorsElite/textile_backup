@@ -25,6 +25,7 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.storage.LevelResource;
 import net.szum123321.textile_backup.TextileBackup;
 import net.szum123321.textile_backup.TextileLogger;
 import net.szum123321.textile_backup.config.ConfigHelper;
@@ -60,7 +61,8 @@ public class Utilities {
 
 	public static Path getWorldFolder(MinecraftServer server) {
 		return ((MinecraftServerSessionAccessor)server)
-			.getStorageSource().getDimensionPath(Level.OVERWORLD);
+			.getStorageSource().getLevelPath(LevelResource.ROOT).toAbsolutePath().normalize();
+			//.getDimensionPath(Level.OVERWORLD);
 	}
 
 	public static void deleteDirectory(Path path) throws IOException {
