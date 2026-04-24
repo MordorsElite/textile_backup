@@ -55,13 +55,12 @@ public class Utilities {
 	}
 
 	public static String getLevelName(MinecraftServer server) {
-		return 	((MinecraftServerSessionAccessor)server).getSession().getLevelId();
+		return 	((MinecraftServerSessionAccessor)server).getStorageSource().getLevelId();
 	}
 
 	public static Path getWorldFolder(MinecraftServer server) {
 		return ((MinecraftServerSessionAccessor)server)
-				.getSession()
-				.getDimensionPath(Level.OVERWORLD);
+			.getStorageSource().getDimensionPath(Level.OVERWORLD);
 	}
 
 	public static void deleteDirectory(Path path) throws IOException {
