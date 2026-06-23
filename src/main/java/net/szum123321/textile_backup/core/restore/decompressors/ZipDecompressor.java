@@ -25,7 +25,7 @@ import net.szum123321.textile_backup.core.Utilities;
 import net.szum123321.textile_backup.core.digest.HashingOutputStream;
 import org.apache.commons.compress.archivers.zip.ZipArchiveEntry;
 import org.apache.commons.compress.archivers.zip.ZipFile;
-import org.apache.commons.compress.utils.IOUtils;
+import org.apache.commons.io.IOUtils;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -42,7 +42,7 @@ public class ZipDecompressor {
 
         FileTreeHashBuilder hashBuilder = new FileTreeHashBuilder(0);
 
-        try(ZipFile zipFile = new ZipFile(inputFile.toFile())) {
+        try(ZipFile zipFile = ZipFile.builder().setFile(inputFile.toFile()).get()) {
             for (Iterator<ZipArchiveEntry> it = zipFile.getEntries().asIterator(); it.hasNext(); ) {
                 ZipArchiveEntry entry = it.next();
                 Path file = target.resolve(entry.getName());

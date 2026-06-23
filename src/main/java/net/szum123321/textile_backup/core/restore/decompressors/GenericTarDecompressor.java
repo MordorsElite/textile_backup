@@ -48,7 +48,7 @@ public class GenericTarDecompressor {
              TarArchiveInputStream archiveInputStream = new TarArchiveInputStream(compressorInputStream)) {
             TarArchiveEntry entry;
 
-            while ((entry = archiveInputStream.getNextTarEntry()) != null) {
+            while ((entry = archiveInputStream.getNextEntry()) != null) {
                 if(!archiveInputStream.canReadEntryData(entry))
                     throw new IOException("Couldn't read archive entry! " + entry.getName());
 
@@ -60,7 +60,7 @@ public class GenericTarDecompressor {
                     Files.createDirectories(file.getParent());
                     try (OutputStream outputStream = Files.newOutputStream(file);
                          HashingOutputStream out = new HashingOutputStream(outputStream, file, treeBuilder)) {
-                        IOUtils.copy(archiveInputStream, out);
+                        org.apache.commons.io.IOUtils.copy(archiveInputStream, out);
                     }
                 }
             }

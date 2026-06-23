@@ -23,7 +23,7 @@ import net.szum123321.textile_backup.core.create.compressors.AbstractCompressor;
 import net.szum123321.textile_backup.core.create.InputSupplier;
 import org.apache.commons.compress.archivers.tar.TarArchiveEntry;
 import org.apache.commons.compress.archivers.tar.TarArchiveOutputStream;
-import org.apache.commons.compress.utils.IOUtils;
+import org.apache.commons.io.IOUtils;
 
 import java.io.*;
 

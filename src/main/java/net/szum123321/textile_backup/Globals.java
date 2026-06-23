@@ -26,8 +26,6 @@ import net.szum123321.textile_backup.core.Utilities;
 import net.szum123321.textile_backup.core.restore.AwaitThread;
 import org.apache.commons.io.FileUtils;
 
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.format.DateTimeFormatter;
@@ -38,7 +36,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Supplier;
-import java.util.zip.CRC32;
 
 public class Globals {
     public static final Globals INSTANCE = new Globals();

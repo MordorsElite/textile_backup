@@ -198,7 +198,7 @@ public class ConfigPOJO implements ConfigData {
         ZIP("zip"),
         GZIP("tar", "gz"),
         BZIP2("tar", "bz2"),
-        LZMA("tar", "xz"),
+        //LZMA("tar", "xz"),
         TAR("tar");
 
         private final List<String> extensionPieces;
