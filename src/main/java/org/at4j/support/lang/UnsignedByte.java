@@ -86,10 +86,10 @@ public final class UnsignedByte implements Serializable, Comparable<UnsignedByte
 		}
 	}
 
-	private static UnsignedByte valueOfSafe(int value)
-	{
-		return valueOf((byte) (value & 0xFF));
-	}
+	//private static UnsignedByte valueOfSafe(int value)
+	//{
+	//	return valueOf((byte) (value & 0xFF));
+	//}
 
 	/**
 	 * Create a new unsigned byte value from the supplied {@code short} value

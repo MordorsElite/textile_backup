@@ -82,7 +82,10 @@ final class BlockEncoder
 	}
 
 	private final byte[] m_block;
+	
+	@SuppressWarnings("unused")
 	private final int m_blockNo;
+
 	private final int m_blockSize;
 	private final int m_blockChecksum;
 	// Bit flags indicating which bytes that occur at least once in this block

@@ -37,7 +37,7 @@ import org.at4j.support.io.LittleEndianBitOutputStream;
  * @since 1.1
  * @see BZip2OutputStreamSettings
  */
-public class BZip2OutputStream extends OutputStream implements AutoCloseable
+public class BZip2OutputStream extends OutputStream
 {
 	private static final byte[] EOS_MAGIC = new byte[] { 0x17, 0x72, 0x45, 0x38, 0x50, (byte) 0x90 };
 
